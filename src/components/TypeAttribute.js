@@ -26,6 +26,25 @@ function TypeAttribute(props) {
     attributeContent = (
       <Fragment>
         <p>
+          <label htmlFor="#weight">Weight (KG)</label>
+          <input
+            id="#weight"
+            type="number"
+            name="weight"
+            min="0.0"
+            step="0.1"
+            required
+          />
+        </p>
+        <sub>Please provide the weight in kilograms</sub>
+      </Fragment>
+    );
+  }
+
+  if (props.value === "3") {
+    attributeContent = (
+      <Fragment>
+        <p>
           <label htmlFor="#height">Height (CM)</label>
           <input
             id="#height"
@@ -59,25 +78,6 @@ function TypeAttribute(props) {
           />
         </p>
         <sub>Please provide dimensions for furniture in HxWxL format</sub>
-      </Fragment>
-    );
-  }
-
-  if (props.value === "3") {
-    attributeContent = (
-      <Fragment>
-        <p>
-          <label htmlFor="#weight">Weight (KG)</label>
-          <input
-            id="#weight"
-            type="number"
-            name="weight"
-            min="0.0"
-            step="0.1"
-            required
-          />
-        </p>
-        <sub>Please provide the weight in kilograms</sub>
       </Fragment>
     );
   }

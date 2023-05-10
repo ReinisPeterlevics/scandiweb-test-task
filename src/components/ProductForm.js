@@ -13,11 +13,11 @@ const DUMMY_TYPES = [
   },
   {
     id: "2",
-    title: "Furniture",
+    title: "Book",
   },
   {
     id: "3",
-    title: "Book",
+    title: "Furniture",
   },
 ];
 

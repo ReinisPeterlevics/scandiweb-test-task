@@ -1,0 +1,36 @@
+.content input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.3em;
+  border: 0.15rem solid var(--color-primary-900);
+  outline: none;
+  cursor: pointer;
+}
+
+input:hover,
+input:active {
+  background: var(--color-gray-600);
+  border-color: var(--color-primary-600);
+}
+
+input.checked {
+  background-color: var(--color-primary-900);
+  position: relative;
+}
+
+input.checked::before {
+  content: "\2713";
+  font-size: 1.3em;
+  color: #fff;
+  position: absolute;
+  right: 2px;
+  top: -4px;
+}
+
+input.checked:hover,
+input.checked:active {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}

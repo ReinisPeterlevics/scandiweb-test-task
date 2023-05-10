@@ -16,7 +16,7 @@
 }
 
 .last {
-  margin-inline-end: 0; 
+  margin-inline-end: 0 !important; 
 }
 
 .button:hover,

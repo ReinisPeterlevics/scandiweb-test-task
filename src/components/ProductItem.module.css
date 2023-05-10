@@ -1,0 +1,45 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  height: 14rem;
+  border: 2px solid var(--color-primary-400);
+  background-color: var(--color-gray-700);
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-block: 1.5rem;
+  margin-inline: 1.5rem;
+}
+
+.check {
+  align-self: start;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.sku {
+  font-size: 1.5rem;
+  margin: auto;
+  margin-top: 0.1rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto;
+}
+
+.price{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary-200);
+  margin: auto;
+}
+
+.attributes {
+  font-size: 1.2rem;
+  margin: auto;
+  margin-bottom: 2.3rem;
+}
