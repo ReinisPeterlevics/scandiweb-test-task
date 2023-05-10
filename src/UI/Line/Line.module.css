@@ -1,5 +1,5 @@
 .line {
-  border: 5px solid var(--color-gray-700);
+  border: 5px solid var(--color-gray-600);
   border-radius: 5px;
   width: 90%;
 }

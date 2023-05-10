@@ -4,7 +4,7 @@ function Button(props) {
   return (
     <button
       type={props.type || 'button'}
-      className={`${classes.button} ${props.className}`}
+      className={`${classes.button} ${props.className === "last" ? classes.last : null}`}
       onClick={props.onClick}
       disabled={props.disabled}
     >

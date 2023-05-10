@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 import classes from "./ProductsList.module.css";
@@ -6,16 +7,18 @@ import Button from "../UI/Button/Button";
 
 function ProductsList() {
   return (
-    <header>
-      <div className={classes.mainselection}>
+    <Fragment>
+    <div className={classes.mainselection}>
+      <div>
         <h1 className={classes.title}>Product List</h1>
-        <div className={classes.buttons}>
-          <Link to="/add-product"><Button>Add</Button></Link>
-          <Button>Mass delete</Button>
-        </div>
       </div>
-      <Line />
-    </header>
+      <div>
+        <Link to="/add-product"><Button>ADD</Button></Link>
+        <Button className={"last"}>MASS DELETE</Button>
+      </div>
+    </div>
+    <Line />
+  </Fragment>
   );
 }
 

@@ -1,5 +1,6 @@
 .mainselection {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 85%;
@@ -9,13 +10,58 @@
   margin-bottom: 1.5rem;
 }
 
-.title{
-  margin-right: auto;
-  justify-content: right;
-  line-height: 3rem;
+.mainselection div {
+  display: flex;
 }
 
-.buttons {
-  margin-left: auto;
-  justify-content: left;
+.title{
+  line-height: 3rem;
+  margin-right: 1.5rem;
+}
+
+.form {
+  max-width: 40rem;
+  margin: 2rem auto;
+}
+
+.form label,
+.form input,
+.form select {
+  display: block;
+  width: 100%;
+}
+
+.form input,
+.form select {
+  font: inherit;
+  padding: 0.25rem;
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-900);
+  border-radius: 5px;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form input:active,
+.form select:focus,
+.form select:active{
+  border: 1px solid var(--color-primary-600) ;
+}
+
+.form select {
+  height: 2.2rem;
+}
+
+.form sub {
+  text-align: center;
+  color: var(--color-primary-200);
+}
+
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

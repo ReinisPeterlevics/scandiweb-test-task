@@ -1,5 +1,6 @@
 .mainselection {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 85%;
@@ -9,13 +10,11 @@
   margin-bottom: 1.5rem;
 }
 
-.title{
-  margin-right: auto;
-  justify-content: right;
-  line-height: 3rem;
+.mainselection div {
+  display: flex;
 }
 
-.buttons {
-  margin-left: auto;
-  justify-content: left;
+.title{
+  line-height: 3rem;
+  margin-right: 1.5rem;
 }
