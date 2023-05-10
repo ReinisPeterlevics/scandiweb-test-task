@@ -1,48 +1,25 @@
-import React, { useState } from "react";
-import $ from "jquery";
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import RootLayout from "./pages/Root";
+import ErrorPage from "./pages/Error";
+import ProductsPage from "./pages/Products";
+import NewProductPage from "./pages/NewProduct";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <ProductsPage /> },
+      { path: "add-product", element: <NewProductPage /> },
+    ],
+  },
+]);
 
 function App() {
-  const [name, setName] = useState("");
-  const [result, setResult] = useState("");
-
-  const changeHandler = (event) => {
-    setName(event.target.value);
-  };
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-    const form = $(event.target);
-    $.ajax({
-      type: "POST",
-      url: form.attr("action"),
-      data: form.serialize(),
-      success(data) {
-        setResult(data);
-      },
-    });
-  };
-
-  return (
-    <div>
-      <form
-        action="http://localhost:8000/server.php"
-        method="post"
-        onSubmit={(event) => submitHandler(event)}
-      >
-        <label htmlFor="name">Enter your name: </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(event) => changeHandler(event)}
-        />
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-      <h1>{result}</h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
