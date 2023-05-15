@@ -3,8 +3,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
-import ProductsPage from "./pages/Products";
-import NewProductPage from "./pages/NewProduct";
+import ProductsPage, { loader as productLoader} from "./pages/Products";
+import NewProductPage, { loader as typeLoader} from "./pages/NewProduct";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +12,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <ProductsPage /> },
-      { path: "add-product", element: <NewProductPage /> },
+      { index: true, element: <ProductsPage />, loader: productLoader },
+      { path: "add-product", element: <NewProductPage /> , loader: typeLoader },
     ],
   },
 ]);

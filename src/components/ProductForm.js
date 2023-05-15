@@ -6,27 +6,12 @@ import Line from "../UI/Line/Line";
 import Button from "../UI/Button/Button";
 import TypeAttribute from "./TypeAttribute";
 
-const DUMMY_TYPES = [
-  {
-    id: "1",
-    title: "DVD",
-  },
-  {
-    id: "2",
-    title: "Book",
-  },
-  {
-    id: "3",
-    title: "Furniture",
-  },
-];
-
-function ProductForm() {
+function ProductForm( {types} ) {
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState("");
 
-  const typeOptions = DUMMY_TYPES.map((type) => (
-    <option key={type.id} value={type.id}>{type.title}</option>
+  const typeOptions = types.map((type) => (
+    <option key={type.type_id} value={type.type_id}>{type.type_name}</option>
   ));
 
   function cancelHandler() {
