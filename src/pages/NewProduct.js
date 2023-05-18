@@ -9,7 +9,7 @@ function NewProductPage() {
   return (
     <Suspense>
       <Await resolve={types}>
-        {(loadedTypes) => <ProductForm types={loadedTypes} />}
+        {(loadedTypes) => <ProductForm types={loadedTypes} method="post" />}
       </Await>
     </Suspense>
   );

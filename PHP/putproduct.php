@@ -1,10 +1,30 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Content-Type: application/json");
+
+if($_SERVER["REQUEST_METHOD"] == "OPTIONS") exit();
 
 include "includes/classAutoloader.inc.php";
 
-$prodObj = new ProductsController();
-$prodObj->addProduct("BOR690217", "Cooking book", "10", "2", null,  null,  null,  null,  "1");
-$prodObj->addProduct("BOR690217", "Chair", "35.5", "3", null,  "50",  "120", "50", null);
-$prodObj->addProduct("BOR690217", "Concert", "29.99", "1", "4600",  null,  null,  null, null);
+// $json = '{"sku":"BOR111222","name":"How to book","price":"12","productType":"1","size":"","height":"NULL","width":"","length":"","weight":""}';
+// $data = json_decode($json,true);
+
+$data = json_decode(file_get_contents("php://input"),true);
+
+$prodTypes = [
+  1 => "DVD",
+  2 => "Book",
+  3 => "Furniture",
+  "DEFAULT" => "EmptyType"
+];
+$type = $data["productType"];
+$prodClass = $prodTypes[$type];
+$prodValidator = new $prodClass($type);
+$isValid = $prodValidator->validate($data);
+
+if ($isValid) {
+  $prodObj = new ProductsController();
+  $prodObj->addProduct($data);
+}

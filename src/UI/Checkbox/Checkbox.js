@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import classes from "./Checkbox.module.css";
 
-function Checkbox() {
+function Checkbox(props) {
   const [isChecked, setIsChecked] = useState(false);
 
   function checkChangeHandler( ){
@@ -11,7 +11,7 @@ function Checkbox() {
 
   return (
     <div className={classes.content}>
-      <input className={isChecked ? classes.checked : null} type="checkbox" checked={isChecked} onChange={checkChangeHandler}/>
+      <input className={`${props.className} ${isChecked ? classes.checked : null}`} type="checkbox" checked={isChecked} onChange={checkChangeHandler}/>
     </div>
   )
 }
