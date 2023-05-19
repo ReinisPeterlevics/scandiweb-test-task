@@ -17,7 +17,7 @@ $prodTypes = [
   1 => "DVD",
   2 => "Book",
   3 => "Furniture",
-  "DEFAULT" => "EmptyType"
+  null => "EmptyType"
 ];
 $type = $data["productType"];
 $prodClass = $prodTypes[$type];
