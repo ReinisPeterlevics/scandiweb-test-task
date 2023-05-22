@@ -8,6 +8,7 @@ function Checkbox(props) {
           props.isChecked ? classes.checked : null
         }`}
         type="checkbox"
+        name={props.value}
         checked={props.isChecked}
         value={props.value}
         onChange={props.checkHandler}
