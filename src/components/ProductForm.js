@@ -104,7 +104,6 @@ export async function action({ request }) {
   if (response.status === 422) {
     const resData = await response.text();
     const jsonData = JSON.parse(resData);
-    console.log(jsonData);
     return jsonData;
   }
 

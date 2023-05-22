@@ -44,8 +44,6 @@ function ProductsList({ products, method }) {
     return revalidator.revalidate();
   }
 
-  console.log(checked);
-
   const productList = products.map((product) => (
     <ProductItem
       key={product.product_id}
