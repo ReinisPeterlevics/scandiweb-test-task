@@ -69,7 +69,7 @@ function TypeAttribute(props) {
   });
 
   if (filteredAttributeTypes.length === 0) {
-    return <Fragment/>;
+    return <Fragment />;
   }
   return (
     <Fragment>

@@ -51,8 +51,22 @@ function ProductForm({ types, method }) {
       <div className={classes.form}>
         <div className={classes.forminput}>
           <InputItem id="#sku" label="SKU" type="text" name="sku" data={data} />
-          <InputItem id="#name" label="Name" type="text" name="name" data={data} />
-          <InputItem id="#price" label="Price ($)" type="number" name="price" min="0.00" step="0.01" data={data} />
+          <InputItem
+            id="#name"
+            label="Name"
+            type="text"
+            name="name"
+            data={data}
+          />
+          <InputItem
+            id="#price"
+            label="Price ($)"
+            type="number"
+            name="price"
+            min="0.00"
+            step="0.01"
+            data={data}
+          />
           <p>
             <label htmlFor="#productType">Type Switcher</label>
             <select

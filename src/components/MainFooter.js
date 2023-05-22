@@ -1,6 +1,6 @@
 import classes from "./MainFooter.module.css";
 
-import Line from "../UI/Line/Line"
+import Line from "../UI/Line/Line";
 
 function MainFooter() {
   return (

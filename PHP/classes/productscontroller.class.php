@@ -10,7 +10,7 @@ class ProductsController extends ProductsModel
 
   public function deleteProducts($data)
   {
-    foreach ($data as $product_id){
+    foreach ($data as $product_id) {
       $this->deleteProduct($product_id);
     }
   }

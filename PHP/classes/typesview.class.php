@@ -1,6 +1,6 @@
 <?php
 
-class TypesView extends Types
+class TypesView extends TypesModel
 {
 
   public function showTypes()

@@ -9,7 +9,9 @@ function ProductsPage() {
   return (
     <Suspense>
       <Await resolve={products}>
-        {(loadedProducts) => <ProductsList products={loadedProducts}  method="delete" />}
+        {(loadedProducts) => (
+          <ProductsList products={loadedProducts} method="delete" />
+        )}
       </Await>
     </Suspense>
   );

@@ -7,10 +7,11 @@ class ProductsView extends ProductsModel
   {
     $results = $this->getProducts();
     header("Content-Type: JSON");
-    echo json_encode($results,JSON_PRETTY_PRINT);
+    echo json_encode($results, JSON_PRETTY_PRINT);
   }
 
-  public function isSkuUnique($sku){
+  public function isSkuUnique($sku)
+  {
     $results = $this->checkSkuUnique($sku);
     return $results;
   }

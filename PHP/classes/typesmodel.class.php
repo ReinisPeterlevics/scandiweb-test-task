@@ -1,6 +1,6 @@
 <?php
 
-class Types extends Dbh
+class TypesModel extends Dbh
 {
 
   protected function getTypes()

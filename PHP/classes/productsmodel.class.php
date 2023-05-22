@@ -33,7 +33,7 @@ class ProductsModel extends Dbh
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$sku]);
 
-    if ($stmt->rowCount() > 0){
+    if ($stmt->rowCount() > 0) {
       return false;
     }
     return true;
