@@ -1,7 +1,7 @@
+import { Suspense } from "react";
 import { json, useLoaderData, defer, Await } from "react-router-dom";
 
 import ProductForm from "../components/ProductForm";
-import { Suspense } from "react";
 
 function NewProductPage() {
   const { types } = useLoaderData();

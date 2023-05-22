@@ -8,9 +8,6 @@ if($_SERVER["REQUEST_METHOD"] == "OPTIONS") exit();
 
 include "includes/classAutoloader.inc.php";
 
-// $json = '{"sku":"BOR111222","name":"How to book","price":"12","productType":"1","size":"","height":"NULL","width":"","length":"","weight":""}';
-// $data = json_decode($json,true);
-
 $data = json_decode(file_get_contents("php://input"),true);
 
 $prodTypes = [

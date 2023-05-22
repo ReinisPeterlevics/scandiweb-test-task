@@ -1,7 +1,7 @@
+import { Suspense } from "react";
 import { json, useLoaderData, defer, Await } from "react-router-dom";
 
 import ProductsList from "../components/ProductsList";
-import { Suspense } from "react";
 
 function ProductsPage() {
   const { products } = useLoaderData();
@@ -9,7 +9,7 @@ function ProductsPage() {
   return (
     <Suspense>
       <Await resolve={products}>
-        {(loadedProducts) => <ProductsList products={loadedProducts} />}
+        {(loadedProducts) => <ProductsList products={loadedProducts}  method="delete" />}
       </Await>
     </Suspense>
   );

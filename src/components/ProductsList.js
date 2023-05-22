@@ -1,12 +1,51 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Fragment, useState } from "react";
+import { Link, json, useRevalidator } from "react-router-dom";
 
 import classes from "./ProductsList.module.css";
+
 import Line from "../UI/Line/Line";
 import Button from "../UI/Button/Button";
 import ProductItem from "./ProductItem";
 
-function ProductsList({products}) {
+function ProductsList({ products, method }) {
+  const revalidator = useRevalidator();
+  const [checked, setChecked] = useState([]);
+
+  function checkHandler(event) {
+    let changedList = [...checked];
+    if (event.target.checked) {
+      changedList = [...checked, event.target.value];
+    } else {
+      changedList.splice(checked.indexOf(event.target.value), 1);
+    }
+    setChecked(changedList);
+  }
+
+  function isChecked(item) {
+    return checked.includes(item.toString());
+  }
+
+  async function deleteProductHandler() {
+    const checkedProducts = checked.reduce((ac, a) => ({ ...ac, [a]: a }), {});
+
+    const response = await fetch("http://localhost/PHP/deleteproducts.php", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(checkedProducts),
+    });
+
+    if (!response.ok) {
+      throw json({ status: 500 });
+    }
+
+    setChecked([]);
+    return revalidator.revalidate();
+  }
+
+  console.log(checked);
+
   const productList = products.map((product) => (
     <ProductItem
       key={product.product_id}
@@ -19,6 +58,9 @@ function ProductsList({products}) {
       width={product.product_width}
       length={product.product_length}
       weight={product.product_weight}
+      value={product.product_id}
+      isChecked={isChecked(product.product_id)}
+      checkHandler={checkHandler}
     />
   ));
 
@@ -32,7 +74,13 @@ function ProductsList({products}) {
           <Link to="/add-product">
             <Button>ADD</Button>
           </Link>
-          <Button className={"last"}>MASS DELETE</Button>
+          <Button
+            onClick={deleteProductHandler}
+            className={"last"}
+            disabled={checked.length === 0}
+          >
+            MASS DELETE
+          </Button>
         </div>
       </div>
       <Line />

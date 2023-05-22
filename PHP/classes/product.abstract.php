@@ -48,7 +48,7 @@ abstract class Product
       $errors["price"] = "Please, enter the price!";
       return $errors;
     }
-    if (strlen(substr(strrchr($price, "."), 1)) > 2 || $price < 0) {
+    if (strlen(substr(strrchr($price, "."), 1)) > 2 || $price < 0 || !is_numeric($price)) {
       $errors["price"] = "Please, provide the price correctly!";
       return $errors;
     }

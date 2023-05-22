@@ -1,6 +1,6 @@
 <?php
 
-class ProductsView extends Products
+class ProductsView extends ProductsModel
 {
 
   public function showProducts()
