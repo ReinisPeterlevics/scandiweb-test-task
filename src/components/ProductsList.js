@@ -7,7 +7,7 @@ import Line from "../UI/Line/Line";
 import Button from "../UI/Button/Button";
 import ProductItem from "./ProductItem";
 
-function ProductsList({ products, method }) {
+function ProductsList({ products }) {
   const revalidator = useRevalidator();
   const [checked, setChecked] = useState([]);
 
@@ -29,10 +29,12 @@ function ProductsList({ products, method }) {
     const checkedProducts = checked.reduce((ac, a) => ({ ...ac, [a]: a }), {});
 
     //Localhost: http://localhost/PHP/deleteproducts.php
-    //000webhost: http://juniortest-reinis.000webhostapp.com/deleteproducts.php
-    const response = await fetch("http://juniortest-reinis.000webhostapp.com/deleteproducts.php", {
+    //Hostinger: https://juniortest-reinis.fun/PHP/deleteproducts.php
+    //infinityfree: http://juniortest-reinis.infinityfreeapp.com/deleteproducts.php
+    const response = await fetch("https://juniortest-reinis.fun/PHP/deleteproducts.php", {
       method: "DELETE",
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(checkedProducts),

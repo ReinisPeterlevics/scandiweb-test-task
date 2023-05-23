@@ -108,10 +108,12 @@ export async function action({ request }) {
   };
 
   //Localhost: http://localhost/PHP/addproduct.php
-  //000webhost: http://juniortest-reinis.000webhostapp.com/addproduct.php
-  const response = await fetch("http://juniortest-reinis.000webhostapp.com/addproduct.php", {
+  //Hostinger: https://juniortest-reinis.fun/PHP/addproduct.php
+  //infinityfree: http://juniortest-reinis.infinityfreeapp.com/addproduct.php
+  const response = await fetch("https://juniortest-reinis.fun/PHP/addproduct.php", {
     method: method,
     headers: {
+      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(productData),

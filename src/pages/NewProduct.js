@@ -19,8 +19,14 @@ export default NewProductPage;
 
 async function loadTypes() {
   //Localhost: http://localhost/PHP/gettypes.php
-  //000webhost: http://juniortest-reinis.000webhostapp.com/gettypes.php
-  const response = await fetch("http://juniortest-reinis.000webhostapp.com/gettypes.php");
+  //Hostinger: https://juniortest-reinis.fun/PHP/gettypes.php
+  //infinityfree: http://juniortest-reinis.infinityfreeapp.com/gettypes.php
+  const response = await fetch("https://juniortest-reinis.fun/PHP/gettypes.php",{
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
 
   if (!response.ok) {
     throw json({ status: 500 });

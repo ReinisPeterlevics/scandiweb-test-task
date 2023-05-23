@@ -10,7 +10,7 @@ function ProductsPage() {
     <Suspense>
       <Await resolve={products}>
         {(loadedProducts) => (
-          <ProductsList products={loadedProducts} method="delete" />
+          <ProductsList products={loadedProducts} />
         )}
       </Await>
     </Suspense>
@@ -21,8 +21,14 @@ export default ProductsPage;
 
 async function loadProducts() {
   //Localhost: http://localhost/PHP/getproducts.php
-  //000webhost: http://juniortest-reinis.000webhostapp.com/getproducts.php
-  const response = await fetch("http://juniortest-reinis.000webhostapp.com/getproducts.php");
+  //Hostinger: https://juniortest-reinis.fun/PHP/getproducts.php
+  //infinityfree: http://juniortest-reinis.infinityfreeapp.com/getproducts.php
+  const response = await fetch("https://juniortest-reinis.fun/PHP/getproducts.php",{
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
 
   if (!response.ok) {
     throw json({ status: 500 });
