@@ -20,7 +20,6 @@ export default NewProductPage;
 async function loadTypes() {
   //Localhost: http://localhost/PHP/gettypes.php
   //Hostinger: https://juniortest-reinis.fun/PHP/gettypes.php
-  //infinityfree: http://juniortest-reinis.infinityfreeapp.com/gettypes.php
   const response = await fetch("https://juniortest-reinis.fun/PHP/gettypes.php",{
     method: "GET",
     headers: {

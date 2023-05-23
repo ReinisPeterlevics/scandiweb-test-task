@@ -30,7 +30,6 @@ function ProductsList({ products }) {
 
     //Localhost: http://localhost/PHP/deleteproducts.php
     //Hostinger: https://juniortest-reinis.fun/PHP/deleteproducts.php
-    //infinityfree: http://juniortest-reinis.infinityfreeapp.com/deleteproducts.php
     const response = await fetch("https://juniortest-reinis.fun/PHP/deleteproducts.php", {
       method: "DELETE",
       headers: {

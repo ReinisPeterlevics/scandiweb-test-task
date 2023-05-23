@@ -109,7 +109,6 @@ export async function action({ request }) {
 
   //Localhost: http://localhost/PHP/addproduct.php
   //Hostinger: https://juniortest-reinis.fun/PHP/addproduct.php
-  //infinityfree: http://juniortest-reinis.infinityfreeapp.com/addproduct.php
   const response = await fetch("https://juniortest-reinis.fun/PHP/addproduct.php", {
     method: method,
     headers: {

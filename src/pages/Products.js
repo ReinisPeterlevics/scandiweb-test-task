@@ -22,7 +22,6 @@ export default ProductsPage;
 async function loadProducts() {
   //Localhost: http://localhost/PHP/getproducts.php
   //Hostinger: https://juniortest-reinis.fun/PHP/getproducts.php
-  //infinityfree: http://juniortest-reinis.infinityfreeapp.com/getproducts.php
   const response = await fetch("https://juniortest-reinis.fun/PHP/getproducts.php",{
     method: "GET",
     headers: {
