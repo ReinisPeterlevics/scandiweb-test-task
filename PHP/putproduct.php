@@ -12,7 +12,7 @@ include "includes/classAutoloader.inc.php";
 $data = json_decode(file_get_contents("php://input"), true);
 
 $prodTypes = [
-  1 => "DVD",
+  1 => "Dvd",
   2 => "Book",
   3 => "Furniture",
   null => "EmptyType"

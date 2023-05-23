@@ -2,7 +2,7 @@
 
 require_once "product.abstract.php";
 
-class DVD extends Product
+class Dvd extends Product
 {
   public function validate($data)
   {
