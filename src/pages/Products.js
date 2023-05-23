@@ -20,7 +20,9 @@ function ProductsPage() {
 export default ProductsPage;
 
 async function loadProducts() {
-  const response = await fetch("http://localhost/PHP/getproducts.php");
+  //Localhost: http://localhost/PHP/getproducts.php
+  //000webhost: http://juniortest-reinis.000webhostapp.com/getproducts.php
+  const response = await fetch("http://juniortest-reinis.000webhostapp.com/getproducts.php");
 
   if (!response.ok) {
     throw json({ status: 500 });

@@ -28,7 +28,9 @@ function ProductsList({ products, method }) {
   async function deleteProductHandler() {
     const checkedProducts = checked.reduce((ac, a) => ({ ...ac, [a]: a }), {});
 
-    const response = await fetch("http://localhost/PHP/deleteproducts.php", {
+    //Localhost: http://localhost/PHP/deleteproducts.php
+    //000webhost: http://juniortest-reinis.000webhostapp.com/deleteproducts.php
+    const response = await fetch("http://juniortest-reinis.000webhostapp.com/deleteproducts.php", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

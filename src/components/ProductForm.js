@@ -107,7 +107,9 @@ export async function action({ request }) {
     weight: productType === "2" ? data.get("weight") : null,
   };
 
-  const response = await fetch("http://localhost/PHP/putproduct.php", {
+  //Localhost: http://localhost/PHP/addproduct.php
+  //000webhost: http://juniortest-reinis.000webhostapp.com/addproduct.php
+  const response = await fetch("http://juniortest-reinis.000webhostapp.com/addproduct.php", {
     method: method,
     headers: {
       "Content-Type": "application/json",

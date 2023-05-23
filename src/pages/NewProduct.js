@@ -9,7 +9,7 @@ function NewProductPage() {
   return (
     <Suspense>
       <Await resolve={types}>
-        {(loadedTypes) => <ProductForm types={loadedTypes} method="post" />}
+        {(loadedTypes) => <ProductForm types={loadedTypes} method="POST" />}
       </Await>
     </Suspense>
   );
@@ -18,7 +18,9 @@ function NewProductPage() {
 export default NewProductPage;
 
 async function loadTypes() {
-  const response = await fetch("http://localhost/PHP/gettypes.php");
+  //Localhost: http://localhost/PHP/gettypes.php
+  //000webhost: http://juniortest-reinis.000webhostapp.com/gettypes.php
+  const response = await fetch("http://juniortest-reinis.000webhostapp.com/gettypes.php");
 
   if (!response.ok) {
     throw json({ status: 500 });

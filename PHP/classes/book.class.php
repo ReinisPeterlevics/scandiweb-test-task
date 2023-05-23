@@ -1,6 +1,6 @@
 <?php
 
-require_once "product.abstract.php";
+require_once "Product.abstract.php";
 
 class Book extends Product
 {

@@ -1,6 +1,6 @@
 <?php
 
-require_once "productsview.class.php";
+require_once "ProductsView.class.php";
 
 abstract class Product
 {
