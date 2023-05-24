@@ -41,8 +41,8 @@ function ProductForm({ types, method }) {
           <h1 className={classes.title}>Product Add</h1>
         </div>
         <div>
-          <Button type="submit">Save</Button>
-          <Button type="button" onClick={cancelHandler} className={"last"}>
+          <Button type="submit" name="Save">Save</Button>
+          <Button type="button" onClick={cancelHandler} className={"last"} name="Cancel">
             Cancel
           </Button>
         </div>
