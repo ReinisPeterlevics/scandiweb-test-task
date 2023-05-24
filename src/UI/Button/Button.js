@@ -9,7 +9,7 @@ function Button(props) {
       }`}
       onClick={props.onClick}
       disabled={props.disabled}
-      id={props.name}
+      id={props.id}
     >
       {props.children}
     </button>

@@ -35,14 +35,14 @@ function ProductForm({ types, method }) {
   }
 
   return (
-    <Form method={method}>
+    <Form id="product_form" method={method}>
       <div className={classes.mainselection}>
         <div>
           <h1 className={classes.title}>Product Add</h1>
         </div>
         <div>
-          <Button type="submit" name="Save">Save</Button>
-          <Button type="button" onClick={cancelHandler} className={"last"} name="Cancel">
+          <Button type="submit">Save</Button>
+          <Button type="button" onClick={cancelHandler} className={"last"}>
             Cancel
           </Button>
         </div>
@@ -50,16 +50,16 @@ function ProductForm({ types, method }) {
       <Line />
       <div className={classes.form}>
         <div className={classes.forminput}>
-          <InputItem id="#sku" label="SKU" type="text" name="sku" data={data} />
+          <InputItem id="sku" label="SKU" type="text" name="sku" data={data} />
           <InputItem
-            id="#name"
+            id="name"
             label="Name"
             type="text"
             name="name"
             data={data}
           />
           <InputItem
-            id="#price"
+            id="price"
             label="Price ($)"
             type="number"
             name="price"
@@ -68,9 +68,9 @@ function ProductForm({ types, method }) {
             data={data}
           />
           <p>
-            <label htmlFor="#productType">Type Switcher</label>
+            <label htmlFor="productType">Type Switcher</label>
             <select
-              id="#productType"
+              id="productType"
               name="productType"
               defaultValue={"DEFAULT"}
               onChange={selectChangeHandler}

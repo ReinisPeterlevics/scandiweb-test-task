@@ -8,7 +8,7 @@ const attributeTypes = [
     sub: "Please provide DVDs media size in megabytes",
     inputs: [
       {
-        id: "#size",
+        id: "size",
         label: "Size (MB)",
         type: "number",
         name: "size",
@@ -22,7 +22,7 @@ const attributeTypes = [
     sub: "Please provide the weight in kilograms",
     inputs: [
       {
-        id: "#weight",
+        id: "weight",
         label: "Weight (KG)",
         type: "number",
         name: "weight",
@@ -36,7 +36,7 @@ const attributeTypes = [
     sub: "Please provide dimensions for furniture in HxWxL format",
     inputs: [
       {
-        id: "#height",
+        id: "height",
         label: "Height (CM)",
         type: "number",
         name: "height",
@@ -44,7 +44,7 @@ const attributeTypes = [
         step: "1",
       },
       {
-        id: "#width",
+        id: "width",
         label: "Width (CM)",
         type: "number",
         name: "width",
@@ -52,7 +52,7 @@ const attributeTypes = [
         step: "1",
       },
       {
-        id: "#length",
+        id: "length",
         label: "Length (CM)",
         type: "number",
         name: "length",

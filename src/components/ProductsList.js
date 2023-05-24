@@ -72,13 +72,12 @@ function ProductsList({ products }) {
         </div>
         <div>
           <Link to="/add-product">
-            <Button name="ADD">ADD</Button>
+            <Button>ADD</Button>
           </Link>
           <Button
             onClick={deleteProductHandler}
             className={"last"}
             disabled={checked.length === 0}
-            name="MASS DELETE"
           >
             MASS DELETE
           </Button>
