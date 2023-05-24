@@ -22,9 +22,6 @@ async function loadTypes() {
   //Hostinger: https://juniortest-reinis.fun/PHP/gettypes.php
   const response = await fetch("https://juniortest-reinis.fun/PHP/gettypes.php",{
     method: "GET",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
   });
 
   if (!response.ok) {

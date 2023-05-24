@@ -24,9 +24,6 @@ async function loadProducts() {
   //Hostinger: https://juniortest-reinis.fun/PHP/getproducts.php
   const response = await fetch("https://juniortest-reinis.fun/PHP/getproducts.php",{
     method: "GET",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
   });
 
   if (!response.ok) {

@@ -112,7 +112,6 @@ export async function action({ request }) {
   const response = await fetch("https://juniortest-reinis.fun/PHP/addproduct.php", {
     method: method,
     headers: {
-      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(productData),

@@ -33,7 +33,6 @@ function ProductsList({ products }) {
     const response = await fetch("https://juniortest-reinis.fun/PHP/deleteproducts.php", {
       method: "DELETE",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(checkedProducts),
