@@ -22,8 +22,8 @@ function ProductItem(props) {
         <Checkbox
           className="delete-checkbox"
           value={props.value}
-          isChecked={props.isChecked}
-          checkHandler={props.checkHandler}
+          // isChecked={props.isChecked}
+          // checkHandler={props.checkHandler}
         />
       </div>
       <div className={classes.sku}>{props.sku}</div>

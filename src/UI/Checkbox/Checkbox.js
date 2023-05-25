@@ -1,19 +1,41 @@
-import classes from "./Checkbox.module.css";
+import { useState } from "react";
+
+// import classes from "./Checkbox.module.css";
 
 function Checkbox(props) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const checkHandler = () => {
+    setIsChecked(!isChecked);
+  };
+
+  //Custom checkbox doesnt work with .checked being changed programmatically
+  // <div className={classes.content}>
+  //   <input
+  //     className={`${props.className} ${
+  //       isChecked ? classes.checked : null
+  //     }`}
+  //     id={props.value}
+  //     type="checkbox"
+  //     name={props.value}
+  //     value={props.value}
+  //     checked={isChecked}
+  //     onChange={checkHandler}
+  //     checked={props.isChecked}
+  //     onChange={props.checkHandler}
+  //   />
+  // </div>
+
   return (
-    <div className={classes.content}>
-      <input
-        className={`${props.className} ${
-          props.isChecked ? classes.checked : null
-        }`}
-        type="checkbox"
-        name={props.value}
-        checked={props.isChecked}
-        value={props.value}
-        onChange={props.checkHandler}
-      />
-    </div>
+    <input
+      className={props.className}
+      id={props.value}
+      type="checkbox"
+      name={props.value}
+      value={props.value}
+      checked={isChecked}
+      onChange={checkHandler}
+    />
   );
 }
 

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Link, json, useRevalidator } from "react-router-dom";
 
 import classes from "./ProductsList.module.css";
@@ -9,40 +9,54 @@ import ProductItem from "./ProductItem";
 
 function ProductsList({ products }) {
   const revalidator = useRevalidator();
-  const [checked, setChecked] = useState([]);
 
-  function checkHandler(event) {
-    let changedList = [...checked];
-    if (event.target.checked) {
-      changedList = [...checked, event.target.value];
-    } else {
-      changedList.splice(checked.indexOf(event.target.value), 1);
-    }
-    setChecked(changedList);
-  }
+  //Custom checkbox doesnt work with .checked being changed programmatically
+  // function checkHandler(event) {
+  //   let changedList = [...checked];
+  //   if (event.target.checked) {
+  //     changedList = [...checked, event.target.value];
+  //   } else {
+  //     changedList.splice(checked.indexOf(event.target.value), 1);
+  //   }
+  //   setChecked(changedList);
+  // }
 
-  function isChecked(item) {
-    return checked.includes(item.toString());
-  }
+  // function isChecked(item) {
+  //   return checked.includes(item.toString());
+  // }
 
   async function deleteProductHandler() {
-    const checkedProducts = checked.reduce((ac, a) => ({ ...ac, [a]: a }), {});
+    //Custom checkbox doesnt work with .checked being changed programmatically
+    // const checkedProducts = checked.reduce((ac, a) => ({ ...ac, [a]: a }), {});
+
+    const checkedProducts = {};
+    let checkboxes = document.getElementsByClassName("delete-checkbox");
+    for (let i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked === true) {
+        checkedProducts[checkboxes[i].value] = checkboxes[i].value;
+      }
+    }
+
+    console.log(JSON.stringify(checkedProducts));
 
     //Localhost: http://localhost/PHP/deleteproducts.php
     //Hostinger: https://juniortest-reinis.fun/PHP/deleteproducts.php
-    const response = await fetch("https://juniortest-reinis.fun/PHP/deleteproducts.php", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(checkedProducts),
-    });
+    const response = await fetch(
+      "https://juniortest-reinis.fun/PHP/deleteproducts.php",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(checkedProducts),
+      }
+    );
 
     if (!response.ok) {
       throw json({ status: 500 });
     }
 
-    setChecked([]);
+    // setChecked([]);
     return revalidator.revalidate();
   }
 
@@ -59,8 +73,8 @@ function ProductsList({ products }) {
       length={product.product_length}
       weight={product.product_weight}
       value={product.product_id}
-      isChecked={isChecked(product.product_id)}
-      checkHandler={checkHandler}
+      // isChecked={isChecked(product.product_id)}
+      // checkHandler={checkHandler}
     />
   ));
 
@@ -77,7 +91,7 @@ function ProductsList({ products }) {
           <Button
             onClick={deleteProductHandler}
             className={"last"}
-            disabled={checked.length === 0}
+            // disabled={checked.length === 0}
           >
             MASS DELETE
           </Button>
